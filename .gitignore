@@ -1,0 +1,8 @@
+## Build Folder
+build/
+
+/local/
+/bin/
+
+## Internal
+internal-*

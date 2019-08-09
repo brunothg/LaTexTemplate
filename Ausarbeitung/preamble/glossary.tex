@@ -1,0 +1,52 @@
+% Zum bauen des Glossars müssen folgende Kompilierschritte durchlaufen werden:
+% 1. pdflatex file
+% 2. makeglossaries file
+% 3. pdflatex file
+% 4. pdflatex file
+
+%\GlsSetQuote{+} %for ngerman " override
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbolverzeichnis}
+\makeglossaries
+\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------Symbole-------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newglossaryentry{symb:Pi}{
+%    name=$\pi$,
+%    description={Die Kreiszahl.},
+%    sort=symbolpi, type=symbolslist
+%}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------Glossar-------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newglossaryentry{glos:AntwD}{
+%     name=Antwortdatei
+%    ,description={Informationen zum
+%        Installieren einer Anwendung oder des Betriebssystems.}
+%}
+\newglossaryentry{glos:CFT}{
+    name={Cross-funktionales Team},
+    plural={Cross-funktionalen Teams},
+    description={Ein Cross-funktionales Team ist eine Gruppe von Mitarbeitern aus verschiedenen Funktionsbereichen des Unternehmens (z.B. Finanzen, Personal, Marketing, Entwicklung und Vertrieb). Sie sind meistens selbstbestimmt und dafür verantwortlich, ihre Ziele umzusetzen.}
+}
+
+\newglossaryentry{glos:KVWL}{
+    name={Kassenärztliche Vereinigung Westfalen-Lippe},
+    description={Die Kassenärztliche Vereinigung Westfalen-Lippe (KVWL) vertritt die Interessen von rund 15.000 niedergelassenen Vertragsärzten und Ärztlichen und Psychologischen Psychotherapeuten sowie Kinder- und Jugendlichenpsychotherapeuten in Westfalen-Lippe. Mit etwa 1.750 Mitarbeitern, von denen die Hälfte im Notfalldienst beschäftigt ist, ist die KVWL eine der größten Kassenärztlichen Vereinigungen. Alle zur vertragsärztlichen Versorgung zugelassenen Ärzte, ärztlichen und psychologischen Psychotherapeuten, sowie Kinder- und Jugendlichenpsychotherapeuten sind Pflichtmitglieder der KVWL. Zu den zentralen Aufgaben der KVWL zählt die Sicherstellung der ambulanten ärztlichen Versorgung in ihrer Region.}
+}
+
+\newglossaryentry{glos:KV}{
+    name={Kassenärztliche Vereinigung},
+    plural={Kassenärztliche Vereinigungen},
+    description={Kassenärztliche Vereinigungen (KV) sind in Deutschland eine Körperschaft öffentlichen Rechts. Ihnen gehören alle Vertragsärzte sowie Vertragspsychotherapeuten an. Es liegt in der Zuständigkeit der KVen, die vertragsärztliche Versorgung der gesetzlich Krankenversicherten in ihrem jeweiligen Gebiet sicher zu stellen. Jedes Bundesland, ausgenommen NRW mit zwei KVen (Westfalen-Lippe und Nordrhein), hat eine eigene KV.}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------Abkürzungen---------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newacronym{KVWL}{\mbox{KVWL}}{Kassenärztliche Vereinigung Westfalen-Lippe\protect\glsadd{glos:KVWL}}
+\newacronym[shortplural={KVen},longplural={Kassenärztlichen Vereinigungen}]{KV}{KV}{Kassenärztliche Vereinigung\protect\glsadd{glos:KV}}

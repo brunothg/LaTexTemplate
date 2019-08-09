@@ -1,0 +1,226 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              Variablen                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Autor
+\renewcommand{\author}{Marvin Bruns} %Name
+\newcommand{\dateOfBirth}{Geburtsdatum} %Geburtsdatum
+\newcommand{\matrNumber}{Matrikelnummer} %Matrikelnummer
+\newcommand{\studycourse}{Studiengang} %Studiengang
+
+%Thema
+\renewcommand{\subject}{Bachelor Thesis} %Art/Thema der Arbeit
+\newcommand{\titel}{Titel der Arbeit} %Titel der Arbeit
+\renewcommand{\subtitle}{Untertitel} %Untertitel
+\newcommand{\degree}{Bachelor of Science\par{}B. Sc.} %Angestrebter Titel (nur bei Abschlussarbeiten, sonst leer lassen/auskommentieren)
+
+%Firmeninformationen (ggf. für Sperrvermerk)
+\newcommand{\company}{Firmenname für Sperrvermerk} %Firmenname
+
+%Betreuer
+\newcommand{\supervisor}{Betreuer} %Betreuer
+\newcommand{\institution}{Uni} %Hochschule
+\newcommand{\faculty}{Fachbereich} %Fachbereich
+\newcommand{\toponym}{Ort} %Ort
+
+%Zweitprüfer
+\newcommand{\secondauditor}{Zweitprüfer} %Prüfer
+
+%Stichwörter
+\newcommand{\keywords}{Stichwörter} %Stichworte durch Komma getrennt
+
+
+%Überschriften
+\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+\renewcommand{\lstlistingname}{Quellcode}
+\newcommand{\listpseudocodename}{Pseudocodeverzeichnis}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\newcommand{\lstlistglossaryname}{Glossar}
+\newcommand{\lstlistglossaryheading}{Glossarverzeichnis}
+\newcommand{\lstlistacronymname}{Abkürzungsverzeichnis}
+\newcommand{\lstlistsymbolname}{Symbolverzeichnis}
+\DefineBibliographyStrings{ngerman}{bibliography = {Literaturverzeichnis}} %ggf. references = {Literaturverzeichnis}
+
+% Sonsitges
+\newcommand{\chapterorig}{\chapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               Einstellungen             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% **************************** HYPERREF SETUP *******************************
+\definecolor{linkcolor}{RGB}{0,0,0}
+\definecolor{urlcolor}{RGB}{0,118,50}
+\definecolor{filecolor}{RGB}{174,15,10}
+\hypersetup
+{
+%bookmarks=true,                       % Lesezeichen im PDF erzeugen
+bookmarksopen=true,                    % Lesezeichen im PDF sofort anzeigen
+%backref=true,                         % Rückverweise im Literaturverzeichnis
+colorlinks=true,                       % Farbige Verweise
+%hidelinks = true,                     % Verweise verbergen (entfernt Farbe und Rahmen)
+pdfstartview={FitH},                   % Ansicht des PDFs beim öffnen
+pdftitle={\titel},                     % Title des PDFs
+pdfauthor={\author},                   % Autor des PDFs
+pdfsubject={\subject},                 % Thema des PDFs
+%pdfcreator={Creator},                 % Erzeuger des Dokuments (Anwendungsprogramm)
+%pdfproducer={Producer},               % Ersteller des PDFs (Programm/Bibliothek/Skript)
+pdfkeywords={\keywords},               % Stichwörter zum PDF
+linkcolor=linkcolor,                   % Farbe von Querverweisen
+citecolor=linkcolor,                   % Farbe von Zitaten
+filecolor=filecolor,                   % Farbe von Verweisen auf Dateien
+urlcolor=urlcolor                      % Farbe von URLs
+}
+
+
+% **************************** GRAPHICX SETUP *******************************
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg} % bekannte Graphik-Dateiformate (müssen nicht mehr im Dateinamen angegeben werden, also statt "beispiel.png" nur noch "beispiel")
+\graphicspath{{./figure/}}   % path to graphics folder, usage {PATH},{ANOTHERPATH}...
+\captionsetup[figure]{skip=10pt} 
+
+
+% **************************** LISTINGS SETUP *******************************
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}
+
+\definecolor{listingbgcolor}{RGB}{242,242,242}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{strings}{RGB}{0,0,1}
+\definecolor{comments}{rgb}{0.25,0.5,0.37}
+\definecolor{keywords}{rgb}{0.5,0.0,0.3}
+
+\lstset{ %
+    backgroundcolor=\color{listingbgcolor},   % Hintergrundfarbe
+    basicstyle=\linespread{0.94}\footnotesize\ttfamily, % Schrifteinstellungen für Quellcode
+    breakatwhitespace=false,         % Automatische Zeilenumbrüche nur bei Leer- oder Tabulatorzeichen (Leerraum/whitespaces)
+    breaklines=true,                 % Automatische Zeilenumbrüche
+    captionpos=b,                    % Beschriftung unten
+    commentstyle=\color{comments},   % Schrifteinstellungen für Kommentare
+    columns=flexible,                 % Ist notwendig, damit man Quellcode aus den Listings kopieren kann
+    %  deletekeywords={...},            % Bestimmte Schlüsselwörter entfernen
+    escapeinside={\%*}{*)},          % Defintion von Escape-Sequenzen
+    extendedchars=true,                   % Nicht ASCII-Zeichen erlauben
+    frame=single,                    % Rahmen um den Quellcode
+    keepspaces=true,                 % Einrückungen im Quellcode behalten
+    keywordstyle=\bfseries\color{keywords},% Schrifteinstellungen für Schlüsselwörter
+    language=java,                   % Programmiersprache des Quellcodes
+    %  morekeywords={*,...},            % Zusätzliche Schlüsselwörter
+    numbers=left,                    % Zeilennummerierung
+    numbersep=5pt,                   % Abstand zwischen Zeilennummerierung und Quellcode
+    numberstyle=\color{black}, % Schrifteinstellungen für Zeilennummern
+    rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    showspaces=false,                % Leerraum-Zeichen anzeigen
+    showstringspaces=false,          % Leerzeichen in Zeichenketten anzeigen
+    showtabs=false,                  % Tabulatorzeichen in Zeichenketten anzeigen
+    stepnumber=1,                    % Schrittweite bei Zeilennummern
+    stringstyle=\color{strings},        % Schrifteinstellungen für Zeichenketten
+    tabsize=4,                       % Tabulatorbreite (Anzahl Leerzeichen)
+    numberbychapter=false            % Nummeriere Quellcode fortlaufend je Kapitel
+}
+
+\definecolor{comments_java}{RGB}{5,132,71}
+\definecolor{keywords_java}{RGB}{112, 6, 147}
+\definecolor{strings_java}{RGB}{0, 0, 0}
+\definecolor{identifiers_java}{rgb}{0, 0, 1}
+\lstdefinestyle{java}
+{
+    language=Java,
+    keywordstyle=\bfseries\color{keywords_java},  	% underlined bold black keywords 
+    identifierstyle=\bfseries\color{identifiers_java}, 
+    commentstyle=\bfseries\color{comments_java}, % white comments 
+    stringstyle=\bfseries\color{strings_java},
+}
+
+\definecolor{basic_xml}{RGB}{5,132,71}
+\definecolor{keywords_xml}{RGB}{112, 6, 147}
+\definecolor{identifiers_xml}{rgb}{0, 0, 1}
+\definecolor{strings_xml}{rgb}{0, 0, 1}
+\definecolor{comments_xml}{RGB} {63,95,191}
+\definecolor{rulecolor_xml}{RGB} {0,0,0}
+\lstdefinestyle{xml}
+{
+    language=xml,
+    basicstyle=\fontsize{9pt}{9pt}\selectfont\color{basic_xml},
+    keywordstyle=\color{keywords_xml},  	% underlined bold black keywords 
+    %Hier können bei Bedarf noch weitere Keywords eingetragen werden
+    keywords={name, value, version, encoding, id, type, xmlns:xsi, ref, namespace},
+    identifierstyle=\color{identifiers_xml},  
+    stringstyle=\color{strings_xml},  
+    commentstyle=\color{comments_xml},
+    morecomment=[s]{<!--}{-->},
+    rulecolor=\color{rulecolor_xml}
+}
+
+\AtBeginDocument{\numberwithin{lstlisting}{section}} % Nummeriere Quellcode fortlaufend je Abschnitt
+
+% *************************** PSEUDOCODE SETUP ********************************
+\floatstyle{boxed}                        % Rahmen für pseudocode-Umgebung
+\newfloat{pseudocode}{htbp}{lop}[section] % Definieren pseudocode-Umgebung
+\floatname{pseudocode}{Pseudocode}        % Beschrifte pseudocode-Umgebung mit "Pseudocode"
+
+\newcommand{\listofpseudocodename}{Pseudocodeverzeichnis}
+\newcommand{\listofpseudocode}{\listof{pseudocode}{\listofpseudocodename}}
+\providecommand*{\pseudocodeautorefname}{Pseudocode}
+
+% ************************* BIBLIOGRAPHY SETUP ******************************
+\addbibresource{bibliography.bib}
+%\nocite{*} % Vor der Abgabe entfernen - zeigt auch nichtbenutzte Quellen an
+
+% ***************************** PAGE SETUP **********************************
+\setlength\parindent{0pt} % Abstand der Überschriften zum Header
+%\renewcommand{\baselinestretch}{1.5} %Setzt den Zeilenabstand global 
+\widowpenalty=300
+\clubpenalty=300
+
+\geometry{
+	a4paper,
+	paperwidth=17cm, % Für book
+	paperheight=24cm, % Für Book
+	textwidth=12cm, % 12cm für book
+	textheight=19cm, % 19cm für book
+%	left=3cm,
+	right=2cm, % 2cm für book
+	top=2cm, % 2cm für book
+%	bottom=3cm,
+%	margin=2cm
+}
+
+
+\pagestyle{scrheadings}
+\clearpairofpagestyles% Leeren von Kopf- und Fußzeile
+\renewcommand{\chapterheadstartvskip}{}
+\ihead{\headmark}
+\ohead{\pagemark}
+
+\newpairofpagestyles{pagenumbers}{
+    \ohead{\pagemark}
+}
+\renewcommand*{\chapterpagestyle}{pagenumbers}
+
+\setlength{\headsep}{15mm}
+\addtokomafont{pagenumber}{\normalfont\bfseries\sffamily} % Anpassen der Schriftart der Seitenzahl
+\setkomafont{pagehead}{\normalfont\bfseries\sffamily}  % Setzen der Schriftart für Kopfzeile
+\automark[section]{chapter}
+
+% Schriftarten
+\usepackage{mathptmx} % Hier steckt Times drin
+\usepackage[scaled]{helvet}
+\usepackage{courier}
+
+% ***************************** ITEMIZE SETUP********************************
+\newcommand{\itemizesquare}{\textcolor{lightgray}{\raisebox{.45ex}{\rule{1ex}{1ex}}}}
+\renewcommand{\labelitemi}{\itemizesquare}

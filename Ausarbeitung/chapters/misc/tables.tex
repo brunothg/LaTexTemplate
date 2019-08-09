@@ -1,0 +1,38 @@
+{
+\baselineskip=22pt % Schriftlinien-Abstand 22 pt (bei allen Verzeichnissen)
+
+% ************************ (Abbildungsverzeichnis) ****************************
+\listoffigures % Abbildungsverzeichnis einfügen
+\newpage
+
+% **************************** LIST OF TABLES *********************************
+\listoftables % Tabellenverzeichnis einfügen
+\newpage
+
+% ************************** LIST OF PSEUDOCODE *******************************
+% \listofpseudocode % Pseudocodeverzeichnis einfügen
+
+% *************************** LIST OF LISTINGS ********************************
+\lstlistoflistings % Quellcodeverzeichnis einfügen
+\newpage
+
+% *************************** GLOSSARY ********************************
+\chapter{\lstlistglossaryheading}
+\renewcommand{\glossarysection}[2][]{} % No title
+
+%Abkürzungen
+\printglossary[type=acronym,style=long,title=\lstlistacronymname]
+
+%Glossar
+\printglossary[style=altlist,title=\lstlistglossaryname]
+
+%Symbole
+\printglossary[type=symbolslist,style=long,title=\lstlistsymbolname]
+}
+\newpage
+
+% *************************** BIBLIOGRAPHY ********************************
+\baselineskip=14pt
+\chapter{\bibname}
+\printbibliography[heading=none]
+\newpage
