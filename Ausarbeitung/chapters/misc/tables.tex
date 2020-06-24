@@ -10,7 +10,10 @@
 \newpage
 
 % ************************** LIST OF PSEUDOCODE *******************************
-% \listofpseudocode % Pseudocodeverzeichnis einfügen
+\let\origlistalgorithmcfname\listalgorithmcfname
+\renewcommand{\listalgorithmcfname}{\protect\chapter{\origlistalgorithmcfname}}
+\listofalgorithmes
+\newpage
 
 % *************************** LIST OF LISTINGS ********************************
 \lstlistoflistings % Quellcodeverzeichnis einfügen
