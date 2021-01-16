@@ -2,25 +2,28 @@
 \baselineskip=22pt % Schriftlinien-Abstand 22 pt (bei allen Verzeichnissen)
 
 % ************************ (Abbildungsverzeichnis) ****************************
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures % Abbildungsverzeichnis einfügen
 \newpage
 
 % **************************** LIST OF TABLES *********************************
-\listoftables % Tabellenverzeichnis einfügen
-\newpage
+%\listoftables % Tabellenverzeichnis einfügen
+%\newpage
 
 % ************************** LIST OF PSEUDOCODE *******************************
 \let\origlistalgorithmcfname\listalgorithmcfname
-\renewcommand{\listalgorithmcfname}{\protect\chapter{\origlistalgorithmcfname}}
+\renewcommand{\listalgorithmcfname}{\listpseudocodename}
+\addcontentsline{toc}{chapter}{\listpseudocodename}
 \listofalgorithmes
 \newpage
 
 % *************************** LIST OF LISTINGS ********************************
+\addcontentsline{toc}{chapter}{\lstlistlistingname}
 \lstlistoflistings % Quellcodeverzeichnis einfügen
 \newpage
 
 % *************************** GLOSSARY ********************************
-\chapter{\lstlistglossaryheading}
+\addchap{\lstlistglossaryheading}
 \renewcommand{\glossarysection}[2][]{} % No title
 
 %Abkürzungen
@@ -36,6 +39,6 @@
 
 % *************************** BIBLIOGRAPHY ********************************
 \baselineskip=14pt
-\chapter{\bibname}
+\addchap{\bibname}
 \printbibliography[heading=none]
 \newpage
