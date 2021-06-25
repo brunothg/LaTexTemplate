@@ -79,6 +79,15 @@ filecolor=filecolor,                   % Farbe von Verweisen auf Dateien
 urlcolor=urlcolor                      % Farbe von URLs
 }
 
+\filecontentsspecials|[]
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+  \Title{|titel}
+  \Author{|author}
+  \Subject{|subject}
+  \Keywords{|keywords} 
+  \Language{de-DE}
+  \Copyrighted{True}
+\end{filecontents*}
 
 % **************************** GRAPHICX SETUP *******************************
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg} % bekannte Graphik-Dateiformate (müssen nicht mehr im Dateinamen angegeben werden, also statt "beispiel.png" nur noch "beispiel")
