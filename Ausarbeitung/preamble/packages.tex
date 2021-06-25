@@ -75,3 +75,14 @@ algochapter
 \usepackage{blindtext} % Erzeugt Platzhalter Text
 \usepackage{pgffor} % foreach schleife
 \usepackage[a-2u]{pdfx} % Erzeugt PDF/A-1b
+
+%\usepackage{filecontents}
+\def\filecontentsspecials#1#2#3{
+  \global\let\ltxspecials\dospecials
+  \gdef\dospecials{\ltxspecials
+    \catcode`#1=0
+    \catcode`#2=1
+    \catcode`#3=2
+    \global\let\dospecials\ltxspecials
+  }
+}
