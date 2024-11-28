@@ -1,4 +1,5 @@
 @echo off
+setlocal EnableExtensions
 setlocal EnableDelayedExpansion
 cd %~dp0
 
@@ -16,12 +17,19 @@ FOR %%i IN (*.puml) DO (
 )
 popd
 
+rmdir /s /q ".\build"
+:tmp_build_loop
+set "TMP_BUILD=%tmp%\bat~%RANDOM%.tmp"
+if exist "%TMP_BUILD%" goto :tmp_build_loop
+xcopy /s /e /i ".\*" "%TMP_BUILD%"
+move "%TMP_BUILD%" ".\build"
+for /r ".\build" %%f in (*) do del "%%f"
 
-pdflatex -shell-escape "%DOC_NAME%.tex"
-pdflatex -shell-escape "%DOC_NAME%.tex"
-biber "%DOC_NAME%"
-pdflatex -shell-escape "%DOC_NAME%.tex"
-pdflatex -shell-escape "%DOC_NAME%.tex"
-makeglossaries "%DOC_NAME%"
-pdflatex -shell-escape "%DOC_NAME%.tex"
-pdflatex -shell-escape "%DOC_NAME%.tex"
+pdflatex -output-directory="build" -shell-escape "%DOC_NAME%.tex"
+pdflatex -output-directory="build" -shell-escape "%DOC_NAME%.tex"
+biber --output-directory="build" "%DOC_NAME%"
+pdflatex -output-directory="build" -shell-escape "%DOC_NAME%.tex"
+pdflatex -output-directory="build" -shell-escape "%DOC_NAME%.tex"
+makeglossaries -d "build" "%DOC_NAME%"
+pdflatex -output-directory="build" -shell-escape "%DOC_NAME%.tex"
+pdflatex -output-directory="build" -shell-escape "%DOC_NAME%.tex"
