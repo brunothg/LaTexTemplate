@@ -1,0 +1,41 @@
+{
+% ************************ (Abbildungsverzeichnis) ****************************
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures % Abbildungsverzeichnis einfügen
+\clearpage
+
+% **************************** LIST OF TABLES *********************************
+%\listoftables % Tabellenverzeichnis einfügen
+%\clearpage
+
+% ************************** LIST OF PSEUDOCODE *******************************
+\let\origlistalgorithmcfname\listalgorithmcfname
+\renewcommand{\listalgorithmcfname}{\listpseudocodename}
+\addcontentsline{toc}{chapter}{\listpseudocodename}
+\listofalgorithmes
+\clearpage
+
+% *************************** LIST OF LISTINGS ********************************
+\addcontentsline{toc}{chapter}{\lstlistlistingname}
+\lstlistoflistings % Quellcodeverzeichnis einfügen
+\clearpage
+
+% *************************** GLOSSARY ********************************
+\addchap{\lstlistglossaryheading}
+\renewcommand{\glossarysection}[2][]{} % No title
+
+%Abkürzungen
+\printglossary[type=acronym,style=long,title=\lstlistacronymname]
+
+%Glossar
+\printglossary[style=altlist,title=\lstlistglossaryname]
+
+%Symbole
+\printglossary[type=symbolslist,style=long,title=\lstlistsymbolname]
+}
+\clearpage
+
+% *************************** BIBLIOGRAPHY ********************************
+\addchap{\bibname}
+\printbibliography[heading=none]
+\clearpage

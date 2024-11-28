@@ -1,0 +1,40 @@
+% Zum bauen des Glossars müssen folgende Kompilierschritte durchlaufen werden:
+% 1. pdflatex file
+% 2. makeglossaries file
+% 3. pdflatex file
+% 4. pdflatex file
+
+%\GlsSetQuote{+} %for ngerman " override
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbolverzeichnis}
+\makeglossaries
+\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------Symbole-------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newglossaryentry{symb:Pi}{
+%    name=$\pi$,
+%    description={Die Kreiszahl.},
+%    sort=symbolpi, type=symbolslist
+%}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------Glossar-------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newglossaryentry{glos:AntwD}{
+%     name=Antwortdatei
+%    ,description={Informationen zum
+%        Installieren einer Anwendung oder des Betriebssystems.}
+%}
+\newglossaryentry{glos:CFT}{
+    name={Cross-funktionales Team},
+    plural={Cross-funktionalen Teams},
+    description={Ein Cross-funktionales Team ist eine Gruppe von Mitarbeitern aus verschiedenen Funktionsbereichen des Unternehmens (z.B. Finanzen, Personal, Marketing, Entwicklung und Vertrieb). Sie sind meistens selbstbestimmt und dafür verantwortlich, ihre Ziele umzusetzen.}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------Abkürzungen---------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newacronym[]{CFT}{CFT}{Cross-funktionales Team\protect\glsadd{glos:CFT}}

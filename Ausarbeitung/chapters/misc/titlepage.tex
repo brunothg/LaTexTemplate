@@ -1,0 +1,42 @@
+\begin{titlepage}
+
+% *** Subject ***
+{\centering {\Huge \bfseries \subject\par}}
+
+% *** Thema ***
+\bigskip\bigskip
+{\centering Thema:\\[0.3cm] {\textbf {\large\titel} \\[0.3cm] \ifdefined\subtitle \subtitle \\[0.05cm]\fi }\par}
+
+% *** Author Informationen ***
+\bigskip\bigskip
+{\centering\bfseries \author\par}
+{\centering geboren am \dateOfBirth\par}
+{\centering Matr.-Nr.: \matrNumber\par}
+
+
+%*** Hochschulinformationen ***
+\bigskip\bigskip\bigskip
+{\centering An der \institution\ im Fachbereich \faculty\ erstellte \par}
+{\centering \subject\par}
+{\centering im Studiengang \studycourse \par}
+\ifdefined\degree
+\bigskip
+{\centering   
+    zur Erlangung des akademischen Grades\par{}\degree \par}
+\fi
+
+%*** Betreuer Informationen ***
+\bigskip\bigskip\bigskip
+{\centering \textbf{Erstprüfer:} \supervisor \par}
+\ifdefined\secondauditor
+{\centering \textbf{Zweitprüfer:} \secondauditor \par}
+\fi
+
+%*** Hochschulinformationen ***
+\bigskip\bigskip\bigskip
+{\centering\bfseries  Fachbereich \faculty\par}
+
+\bigskip\bigskip
+{\centering \city, \today\par}
+
+\end{titlepage}

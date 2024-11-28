@@ -1,0 +1,2 @@
+Custom command for compiling in Texmaker:
+pdflatex -synctex=1 -interaction=nonstopmode %.tex|biber build/%|pdflatex -synctex=1 -interaction=nonstopmode %.tex|pdflatex -synctex=1 -interaction=nonstopmode %.tex|makeglossaries -d build %|pdflatex -synctex=1 -interaction=nonstopmode %.tex|pdflatex -synctex=1 -interaction=nonstopmode %.tex|"C:/Program Files/Adobe/Reader 11.0/Reader/AcroRd32.exe" %.pdf

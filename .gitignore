@@ -1,0 +1,23 @@
+## Build Folder
+build/
+
+# Jetbrains
+.idea/
+*.iml
+
+# generated
+*.class
+*.blend[1-9]
+generated/
+
+# Build Artefakte
+/bin/
+/docs/
+/build/
+/opencv/
+/opencv_contrib/
+/ceres-solver/
+/vcglib/
+/openMVS/
+/Meshlab
+/*.installed

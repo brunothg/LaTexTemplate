@@ -1,2 +1,3 @@
-# LaTexTemplate
-LaTex template for university
+LaTexTemplate
+=============================
+LaTexTemplate for university

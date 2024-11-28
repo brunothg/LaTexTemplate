@@ -1,0 +1,90 @@
+\usepackage{morewrites} % Notwendig für "zu viele" Schreibintensive packages
+
+% Unterstützung für die deutsche Sprache
+\usepackage[ngerman]{babel} % Lokalisierung von Typographie, Silbentrennung, ...
+\usepackage[utf8]{inputenc} % Unterstützung von UTF-8 in Eingabe-Dateien
+\usepackage[T1]{fontenc} % Zeichensatzkodierung von LaTeX (Cork-Kodierung)
+
+% Schriftarten
+\usepackage{lmodern}
+\usepackage{mathptmx}
+\usepackage[scaled]{helvet}
+\usepackage{courier}
+
+% Bibliography
+\usepackage[autostyle]{csquotes}
+\usepackage[
+	style=alphabetic
+	,sorting=nty
+	,sortlocale=de_DE
+	,natbib=true
+	,backend=biber
+	,maxbibnames=99
+	,block=ragged % Kein Blocktext im Quellenverzeichnis
+]{biblatex} % Moderne bibtex version
+
+% Formatierung
+\usepackage[pdfa]{hyperref} % Querverweise, Hyperlink, pdf-Konfiguration, etc.
+\usepackage[
+xindy         %Unicode index sorter
+,nonumberlist %keine Seitenzahlen anzeigen
+,nopostdot    %Den Punkt am Ende jeder Beschreibung deaktivieren
+,acronym      %ein Abkürzungsverzeichnis erstellen
+,toc          %Einträge im Inhaltsverzeichnis
+,numberedsection % Nummerierung
+,section      %im Inhaltsverzeichnis auf section-Ebene erscheinen
+%,automake     %erstellt wenn möglich alle Verzeichnisse ohne expliziten makeglossaries Aufruf
+%,numberedsection=autolabel %Zum einfügen in das Appendix
+]{glossaries} % vor hyperref einbinden, um Verlinkung zu deaktiveren
+\usepackage{geometry} % Zum Gestalten der Seiten
+\usepackage{setspace} %  Zeilenabstand zu ändern
+\usepackage{ellipsis}	% Korrigiert den Weißraum um Auslassungspunkte
+\usepackage{scrhack} % Bugfix für listings unter KomaScript\textsl{•}
+\usepackage{listings} % Quellcode
+\usepackage{float} % Floats are containers for things in a document that cannot be broken over a page
+\usepackage[headsepline]{scrlayer-scrpage} % KomaScript Kopf- & Fußzeile
+\usepackage{booktabs} % Professionelle Tabellen; http://www.tablesgenerator.com/latex_tables
+\usepackage{soulutf8}
+\usepackage[section]{placeins} % verhindert, dass floats über Abschnittsgrenzen hinweg verschoben werden; \FloatBarrier für eigene Grenzen
+
+% Programmierung, Pseudocode, etc ...
+\usepackage[
+ngerman,
+germankw,
+onelanguage, % Ausschalten, wenn englische keywords gewünscht sind
+algo2e,
+linesnumbered,
+longend,
+boxed,
+vlined,
+algochapter
+]{algorithm2e}
+
+% Grafisches
+\usepackage{caption}
+\usepackage{graphicx} % Erweiterte Unterstützung von Graphiken
+\usepackage{rotating} % Drehen von Graphiken inkl. Unterschrift
+\usepackage[table, xcdraw]{xcolor} % TeX-Engine-unabhängige Definition von Farben
+% \usepackage{svg} % Für Vektorgrafiken
+% \usepackage{epstopdf} % Für EPS Dateien
+
+% Mathematik, Formeln, etc.
+\usepackage{amsmath, amsfonts, amssymb, amsthm} % Paket für die align Umgebung
+\usepackage{mathtools}
+\usepackage{pgfplots}
+
+% Sonstige
+\usepackage{blindtext} % Erzeugt Platzhalter Text
+\usepackage{pgffor} % foreach schleife
+\usepackage[a-2u]{pdfx} % Erzeugt PDF/A-1b
+
+%\usepackage{filecontents}
+\def\filecontentsspecials#1#2#3{
+  \global\let\ltxspecials\dospecials
+  \gdef\dospecials{\ltxspecials
+    \catcode`#1=0
+    \catcode`#2=1
+    \catcode`#3=2
+    \global\let\dospecials\ltxspecials
+  }
+}
